@@ -13,19 +13,31 @@ class CoreLocationSession: NSObject {
     
     public var locationManager: CLLocationManager //dont need ! since we setting locationManager with a value (locationManager = CLLocationManager())
     
-   override init() {
+    override init() {
         locationManager = CLLocationManager()
         super.init()
         
-        //withput delegate will will not get updates
         locationManager.delegate = self
+        
+        //withput delegate will will not get updates
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        /*
+         MapKit-Introduction-Lab[23985:2370638] This app has attempted to access privacy-sensitive data without a usage description. The app's Info.plist must contain both “NSLocationAlwaysAndWhenInUseUsageDescription” and “NSLocationWhenInUseUsageDescription” keys with string values explaining to the user how the app uses this data
+         
+         WE NEED TO ADD THOSE 2 KEYS (“NSLocationAlwaysAndWhenInUseUsageDescription” and “NSLocationWhenInUseUsageDescription”) to PLIST
+         We need to give value (description))
+         */
+        
+        //get updates for user location
+        locationManager.startUpdatingLocation()
     }
 }
 
 extension CoreLocationSession: CLLocationManagerDelegate {
     //this methos is called when user changes the location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations") //gives us back an array of CLLocations (ususally we need the last one - most updated)
+        print("didUpdateLocations: \(locations)") //gives us back an array of CLLocations (ususally we need the last one - most updated)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -53,7 +65,7 @@ extension CoreLocationSession: CLLocationManagerDelegate {
         }
     }
     
-    //think about is as a circle (region has a center and radius)
+    //think about is as a circle
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("didEnterRegion")
     }
