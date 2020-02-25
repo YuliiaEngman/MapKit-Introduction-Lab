@@ -14,6 +14,7 @@
 		0FC9E09E2404ABF200442382 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC9E09D2404ABF200442382 /* Assets.xcassets */; };
 		0FC9E0A12404ABF200442382 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC9E09F2404ABF200442382 /* LaunchScreen.storyboard */; };
 		0FC9E0AC2404ABF200442382 /* MapKit_Introduction_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0AB2404ABF200442382 /* MapKit_Introduction_LabTests.swift */; };
+		0FC9E0B724058CB200442382 /* CoreLocationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0B624058CB200442382 /* CoreLocationSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0FC9E0A72404ABF200442382 /* MapKit-Introduction-LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MapKit-Introduction-LabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC9E0AB2404ABF200442382 /* MapKit_Introduction_LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKit_Introduction_LabTests.swift; sourceTree = "<group>"; };
 		0FC9E0AD2404ABF200442382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC9E0B624058CB200442382 /* CoreLocationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				0FC9E0942404ABEE00442382 /* AppDelegate.swift */,
 				0FC9E0962404ABEE00442382 /* SceneDelegate.swift */,
 				0FC9E0982404ABEE00442382 /* ViewController.swift */,
+				0FC9E0B624058CB200442382 /* CoreLocationSession.swift */,
 				0FC9E09A2404ABEE00442382 /* Main.storyboard */,
 				0FC9E09D2404ABF200442382 /* Assets.xcassets */,
 				0FC9E09F2404ABF200442382 /* LaunchScreen.storyboard */,
@@ -202,6 +205,7 @@
 			files = (
 				0FC9E0992404ABEE00442382 /* ViewController.swift in Sources */,
 				0FC9E0952404ABEE00442382 /* AppDelegate.swift in Sources */,
+				0FC9E0B724058CB200442382 /* CoreLocationSession.swift in Sources */,
 				0FC9E0972404ABEE00442382 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
