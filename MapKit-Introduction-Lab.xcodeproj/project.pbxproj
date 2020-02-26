@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		0FC9E0AC2404ABF200442382 /* MapKit_Introduction_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0AB2404ABF200442382 /* MapKit_Introduction_LabTests.swift */; };
 		0FC9E0B724058CB200442382 /* CoreLocationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0B624058CB200442382 /* CoreLocationSession.swift */; };
 		0FC9E0B92405CF2900442382 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0B82405CF2900442382 /* MapViewController.swift */; };
+		0FC9E0BC2405FF4500442382 /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FC9E0BB2405FF4500442382 /* ImageKit */; };
+		0FC9E0BE2405FF5A00442382 /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0BD2405FF5A00442382 /* SchoolModel.swift */; };
+		0FC9E0C02406034400442382 /* SchoolsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0BF2406034400442382 /* SchoolsAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,8 @@
 		0FC9E0AD2404ABF200442382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FC9E0B624058CB200442382 /* CoreLocationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationSession.swift; sourceTree = "<group>"; };
 		0FC9E0B82405CF2900442382 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0FC9E0BD2405FF5A00442382 /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
+		0FC9E0BF2406034400442382 /* SchoolsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC9E0BC2405FF4500442382 /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +95,8 @@
 				0FC9E09D2404ABF200442382 /* Assets.xcassets */,
 				0FC9E09F2404ABF200442382 /* LaunchScreen.storyboard */,
 				0FC9E0A22404ABF200442382 /* Info.plist */,
+				0FC9E0BD2405FF5A00442382 /* SchoolModel.swift */,
+				0FC9E0BF2406034400442382 /* SchoolsAPIClient.swift */,
 			);
 			path = "MapKit-Introduction-Lab";
 			sourceTree = "<group>";
@@ -118,6 +126,9 @@
 			dependencies = (
 			);
 			name = "MapKit-Introduction-Lab";
+			packageProductDependencies = (
+				0FC9E0BB2405FF4500442382 /* ImageKit */,
+			);
 			productName = "MapKit-Introduction-Lab";
 			productReference = 0FC9E0912404ABEE00442382 /* MapKit-Introduction-Lab.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 0FC9E0882404ABEE00442382;
+			packageReferences = (
+				0FC9E0BA2405FF4500442382 /* XCRemoteSwiftPackageReference "ImageKit" */,
+			);
 			productRefGroup = 0FC9E0922404ABEE00442382 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,7 +220,9 @@
 				0FC9E0952404ABEE00442382 /* AppDelegate.swift in Sources */,
 				0FC9E0B724058CB200442382 /* CoreLocationSession.swift in Sources */,
 				0FC9E0B92405CF2900442382 /* MapViewController.swift in Sources */,
+				0FC9E0BE2405FF5A00442382 /* SchoolModel.swift in Sources */,
 				0FC9E0972404ABEE00442382 /* SceneDelegate.swift in Sources */,
+				0FC9E0C02406034400442382 /* SchoolsAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +489,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FC9E0BA2405FF4500442382 /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FC9E0BB2405FF4500442382 /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FC9E0BA2405FF4500442382 /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0FC9E0892404ABEE00442382 /* Project object */;
 }
