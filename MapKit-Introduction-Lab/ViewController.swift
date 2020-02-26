@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     private let locationSession = CoreLocationSession()
 
@@ -17,6 +20,9 @@ class ViewController: UIViewController {
         
         //testing converting coordinate to placemark
         convertCoordinateToPlacemark()
+        
+        //testing converting place name to coordinate
+        convertPlaceNameToCoordinate()
     }
     
     private func convertCoordinateToPlacemark() {
@@ -31,5 +37,9 @@ class ViewController: UIViewController {
 //        }
 //    }
     //Getting Pursuit location: placemark info: Skillman Ave, Skillman Ave, Long Island City, NY  11101, United States
+    
+    private func convertPlaceNameToCoordinate() {
+        locationSession.convertPlaceNameToCoordinate(addressString: "Brooklyn Museum")
+    }
 
 }

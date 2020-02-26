@@ -74,7 +74,7 @@ class CoreLocationSession: NSObject {
             }
             if let firstPlacemark = placemarks?.first,
                 let location = firstPlacemark.location {
-                print("coordinate is \(location.coordinate)")
+                print("place name coordinate is \(location.coordinate)")
             }
         }
     }
