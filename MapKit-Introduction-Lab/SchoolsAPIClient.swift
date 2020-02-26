@@ -10,7 +10,7 @@ import Foundation
 import NetworkHelper
 
 struct SchoolsApIClient {
-    static func fetchSchools(for section: String, completion: @escaping (Result<[Schools], AppError>) -> ()) {
+    static func fetchSchools(completion: @escaping (Result<[Schools], AppError>) -> ()) {
         let endpointURLString = "https://data.cityofnewyork.us/resource/uq7m-95z8.json"
         guard let url = URL(string: endpointURLString) else {
             completion(.failure(.badURL(endpointURLString)))

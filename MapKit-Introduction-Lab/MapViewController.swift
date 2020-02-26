@@ -14,12 +14,14 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView! //it is scroll view
     
     private let locationSession = CoreLocationSession()
+    
+    var schools = [Schools]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //testing converting coordinate to placemark
-        convertCoordinateToPlacemark()
+        //convertCoordinateToPlacemark()
         
         //testing converting place name to coordinate
         convertPlaceNameToCoordinate()
@@ -30,14 +32,32 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         
         loadMapView()
+        
+        getSchools()
+    }
+    
+    private func getSchools() {
+        SchoolsApIClient.fetchSchools {[weak self] (result) in
+            switch result {
+            case .failure(let appError):
+            print("error get schools: \(appError)")
+            case .success(let schools):
+                self?.schools = schools
+                DispatchQueue.main.async {
+                    self?.loadMapView()
+                }
+            }
+        }
     }
     
     private func makeAnnotations() -> [MKPointAnnotation] {
         var annotations = [MKPointAnnotation]()
-        for location in Location.getLocations() {
+        for school in schools {
             let annotation = MKPointAnnotation()
-            annotation.coordinate = location.coordinate
-            annotation.title = location.title
+            let latitude = school.latitude
+            let longitude = school.longitude
+            annotation.coordinate = CLLocationCoordinate2D(latitude: Double(latitude) ?? 0.0, longitude: Double(longitude) ?? 0.0)
+            annotation.title = school.schoolName
             annotations.append(annotation)
         }
         return annotations
@@ -51,11 +71,11 @@ class MapViewController: UIViewController {
         mapView.showAnnotations(annotations, animated: true)
     }
     
-    private func convertCoordinateToPlacemark() {
-          let location = Location.getLocations()[2]
-        //gives us Central Park: Central Park, Central Park, West Dr, New York, NY  10028, United States
-              locationSession.convertCoordinateToPlacemark(coordinate: location.coordinate)
-      }
+//    private func convertCoordinateToPlacemark() {
+//          let location = Location.getLocations()[2]
+//        //gives us Central Park: Central Park, Central Park, West Dr, New York, NY  10028, United States
+//              locationSession.convertCoordinateToPlacemark(coordinate: location.coordinate)
+//      }
     
 //    private func convertCoordinateToPlacemark() {
 //        if let location = Location.getLocations().first {
