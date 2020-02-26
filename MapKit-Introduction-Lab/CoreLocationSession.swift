@@ -46,7 +46,20 @@ class CoreLocationSession: NSObject {
          */
         
         //get updates for user location
-        locationManager.startUpdatingLocation()
+        
+        // is more aggressive solution for GPS data collection
+        //locationManager.startUpdatingLocation()
+        
+        startSignificantLocationChanges()
+    }
+    
+    private func startSignificantLocationChanges() {
+        if !CLLocationManager.significantLocationChangeMonitoringAvailable() {
+            //not available on device
+            return
+        }
+        //less aggressive than locationManager.startUpdatingLocation() in GPS monitor changes
+        locationManager.startMonitoringSignificantLocationChanges()
     }
     
     // 2D has latitude and longitude (2 values)
@@ -77,6 +90,15 @@ class CoreLocationSession: NSObject {
                 print("place name coordinate is \(location.coordinate)")
             }
         }
+    }
+    
+    //monitor a CLRegion - is made up of centered coordinate and radius in meters
+    private func startMonitoringRegion() {
+        let location = Location.getLocations()[2]
+        let identifier = "monitoring region"
+        let region = CLCircularRegion(center: location.coordinate, radius: 500, identifier: identifier)
+        region.notifyOnEntry = true
+        region.notifyOnExit = false
     }
 }
 

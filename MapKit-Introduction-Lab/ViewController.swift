@@ -11,7 +11,7 @@ import MapKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView! //it is scroll view
     
     private let locationSession = CoreLocationSession()
 
@@ -23,6 +23,10 @@ class ViewController: UIViewController {
         
         //testing converting place name to coordinate
         convertPlaceNameToCoordinate()
+        
+        // configure map view
+        // attempt to show the user's current location
+        mapView.showsUserLocation = true
     }
     
     private func convertCoordinateToPlacemark() {
