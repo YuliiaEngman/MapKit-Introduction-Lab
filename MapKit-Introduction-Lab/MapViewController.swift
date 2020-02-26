@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView! //it is scroll view
     
@@ -27,6 +27,16 @@ class ViewController: UIViewController {
         // configure map view
         // attempt to show the user's current location
         mapView.showsUserLocation = true
+    }
+    
+    func makeAnnotations() {
+        var annotations = [MKPointAnnotation]()
+        for location in Location.getLocations() {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location.coordinate
+            annotation.title = location.title
+            annotations.append(annotation)
+        }
     }
     
     private func convertCoordinateToPlacemark() {

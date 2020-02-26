@@ -14,7 +14,7 @@
 		0FC9E0A12404ABF200442382 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC9E09F2404ABF200442382 /* LaunchScreen.storyboard */; };
 		0FC9E0AC2404ABF200442382 /* MapKit_Introduction_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0AB2404ABF200442382 /* MapKit_Introduction_LabTests.swift */; };
 		0FC9E0B724058CB200442382 /* CoreLocationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0B624058CB200442382 /* CoreLocationSession.swift */; };
-		0FC9E0B92405CF2900442382 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0B82405CF2900442382 /* ViewController.swift */; };
+		0FC9E0B92405CF2900442382 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC9E0B82405CF2900442382 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		0FC9E0AB2404ABF200442382 /* MapKit_Introduction_LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKit_Introduction_LabTests.swift; sourceTree = "<group>"; };
 		0FC9E0AD2404ABF200442382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FC9E0B624058CB200442382 /* CoreLocationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationSession.swift; sourceTree = "<group>"; };
-		0FC9E0B82405CF2900442382 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FC9E0B82405CF2900442382 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			children = (
 				0FC9E0942404ABEE00442382 /* AppDelegate.swift */,
 				0FC9E0962404ABEE00442382 /* SceneDelegate.swift */,
-				0FC9E0B82405CF2900442382 /* ViewController.swift */,
+				0FC9E0B82405CF2900442382 /* MapViewController.swift */,
 				0FC9E0B624058CB200442382 /* CoreLocationSession.swift */,
 				0FC9E09A2404ABEE00442382 /* Main.storyboard */,
 				0FC9E09D2404ABF200442382 /* Assets.xcassets */,
@@ -205,7 +205,7 @@
 			files = (
 				0FC9E0952404ABEE00442382 /* AppDelegate.swift in Sources */,
 				0FC9E0B724058CB200442382 /* CoreLocationSession.swift in Sources */,
-				0FC9E0B92405CF2900442382 /* ViewController.swift in Sources */,
+				0FC9E0B92405CF2900442382 /* MapViewController.swift in Sources */,
 				0FC9E0972404ABEE00442382 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

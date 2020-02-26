@@ -50,7 +50,10 @@ class CoreLocationSession: NSObject {
         // is more aggressive solution for GPS data collection
         //locationManager.startUpdatingLocation()
         
+        // less aggressive on battery consumption and GPS data collection
         startSignificantLocationChanges()
+        
+        startMonitoringRegion()
     }
     
     private func startSignificantLocationChanges() {
@@ -99,6 +102,8 @@ class CoreLocationSession: NSObject {
         let region = CLCircularRegion(center: location.coordinate, radius: 500, identifier: identifier)
         region.notifyOnEntry = true
         region.notifyOnExit = false
+        
+        locationManager.startMonitoring(for: region)
     }
 }
 
@@ -135,10 +140,10 @@ extension CoreLocationSession: CLLocationManagerDelegate {
     
     //think about is as a circle
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("didEnterRegion")
+        print("didEnterRegion: \(region)")
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("didExitRegion")
+        print("didExitRegion: \(region)")
     }
 }
