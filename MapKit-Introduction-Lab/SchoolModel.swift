@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct ModelForNYCSchools: Codable {
-    let results: [Schools]
-}
-
 struct Schools: Codable {
     let schoolName: String
     let latitude: String
@@ -20,7 +16,7 @@ struct Schools: Codable {
         case schoolName = "school_name"
         case latitude
         case longitude
-}
+    }
 }
 
 
